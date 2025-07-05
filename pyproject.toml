@@ -1,0 +1,25 @@
+[project]
+name = "numerology-metadee"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "accelerate>=1.8.1",
+    "bitsandbytes>=0.46.1",
+    "chromadb>=1.0.15",
+    "faiss-cpu>=1.11.0",
+    "google>=3.0.0",
+    "google-generativeai>=0.8.5",
+    "groq>=0.29.0",
+    "langchain>=0.3.26",
+    "langchain-community>=0.3.27",
+    "langchain-groq>=0.3.5",
+    "langchain-huggingface>=0.3.0",
+    "openai==0.28",
+    "pypdf>=5.7.0",
+    "sentence-transformers>=5.0.0",
+    "streamlit>=1.46.1",
+    "torch>=2.7.1",
+    "transformers>=4.53.1",
+]

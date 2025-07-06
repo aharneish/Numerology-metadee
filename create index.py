@@ -1,10 +1,15 @@
+
+# --- Helper script to build and persist the FAISS index for RAG ---
 import os
 from langchain_community.document_loaders import DirectoryLoader, TextLoader, PyPDFLoader
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
 def build_faiss_index(doc_folder="./docs", faiss_dir="faiss_index"):
-    """Build and persist the FAISS index from documents. Run this ONCE before main workflow."""
+    """
+    Build and persist the FAISS index from documents. Run this ONCE before main workflow.
+    Scans the docs/ folder for .txt and .pdf files, embeds them, and saves the FAISS index.
+    """
     print("Building FAISS index...")
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     # Load .txt files
@@ -27,4 +32,7 @@ def build_faiss_index(doc_folder="./docs", faiss_dir="faiss_index"):
     vectordb.save_local(faiss_dir)
     print(f"FAISS index created and persisted in {faiss_dir}")
 
-build_faiss_index()
+
+# Run this script directly to build the index
+if __name__ == "__main__":
+    build_faiss_index()

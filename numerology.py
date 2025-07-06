@@ -1,11 +1,20 @@
 def is_valid_date(date_str):
     """Check if the date string is in YYYY-MM-DD format and is a valid date."""
+
+# --- Numerology core logic and validation functions ---
+
+import datetime
+
+def is_valid_date(date_str):
+    """
+    Check if the date string is in YYYY-MM-DD format and is a valid date.
+    Returns True if valid, False otherwise.
+    """
     try:
         datetime.datetime.strptime(date_str, "%Y-%m-%d")
         return True
     except ValueError:
         return False
-import datetime
 
 # Mapping the english letters to pythogorean system to calculate the Destiny /Expression Number, Soul Urge, Personality Number etc
 LETTER_VALUES={

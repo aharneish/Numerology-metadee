@@ -1,3 +1,6 @@
+"""
+this function generates the prompt by using the calculated profile numbers and then using the deity map to generate the final prompt.
+"""
 def build_prompt(profile):
     deity_map={
         1:"Surya",
@@ -37,5 +40,6 @@ Instructions:
 2. Suggest deities, mantras, or shlokas aligned to the numbers.
 3. Include one quote from Gita or Upanishads.
 4. End with a blessing.
+5. Always use the rag to provide accuracte responses and also pick quotes and sholakas from the rag.
 """
     return prompt

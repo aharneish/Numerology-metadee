@@ -1,3 +1,7 @@
+"""
+Importing the required libraries
+"""
+
 import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
@@ -5,10 +9,16 @@ from langchain_community.document_loaders import DirectoryLoader, TextLoader, Py
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
+# loading the environment variables
 load_dotenv()
 
+"""
+the functions get_retriever function checks for if there is any existing index i.e. a vector database present in the directory and uses that for more insights.
+the function generate report uses the prompt, rag index to generate the report in a soft and devotional tone with more insights.
+"""
+
 def get_retriever(doc_folder="./docs", faiss_dir="faiss_index"):
-    print("inside the retriever")
+    # print("inside the retriever")
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     faiss_index_file = os.path.join(faiss_dir, "index.faiss")
     store_file = os.path.join(faiss_dir, "index.pkl")
@@ -17,7 +27,7 @@ def get_retriever(doc_folder="./docs", faiss_dir="faiss_index"):
         print("using the persisted FAISS index")
         vectordb = FAISS.load_local(faiss_dir, embeddings, allow_dangerous_deserialization=True)
     else:
-        print("creating the FAISS index")
+        # print("creating the FAISS index")
         # Load .txt files
         txt_loader = DirectoryLoader(doc_folder, glob="*.txt", loader_cls=TextLoader)
         txt_docs = txt_loader.load()

@@ -55,22 +55,27 @@ def reduce_to_single_digit(n):
 def get_life_path(dob):
     if not is_valid_date(dob):
         raise ValueError(f"Invalid date format or date: {dob}. Please use YYYY-MM-DD and ensure the date is valid.")
-    digits = ''.join(dob.split('-')) #YYYYMMDD
+    digits = ''.join(dob.split('-')) # YYYYMMDD
     return reduce_to_single_digit(sum(int(d) for d in digits))
 
-def get_destiny(name):
-    total=sum(LETTER_VALUES.get(c,0) for c in name.upper() if c in VOWELS)
-    return reduce_to_single_digit(total)
+def get_destiny(dob):
+    """
+    Destiny number is calculated from the date of birth (non-standard, per user request).
+    """
+    if not is_valid_date(dob):
+        raise ValueError(f"Invalid date format or date: {dob}. Please use YYYY-MM-DD and ensure the date is valid.")
+    digits = ''.join(dob.split('-')) # YYYYMMDD
+    return reduce_to_single_digit(sum(int(d) for d in digits))
 
 def get_soul_urge(name):
     total=sum(LETTER_VALUES.get(c,0) for c in name.upper() if c in VOWELS)
     return reduce_to_single_digit(total)
 
-def get_numerology_profile(name,dob):
+def get_numerology_profile(name, dob):
     if not is_valid_date(dob):
         raise ValueError(f"Invalid date format or date: {dob}. Please use YYYY-MM-DD and ensure the date is valid.")
     life_path = get_life_path(dob)
-    destiny = get_destiny(name)
+    destiny = get_destiny(dob)  # Pass dob, not name, to get_destiny
     soul_urge = get_soul_urge(name)
     master_numbers = {11, 22, 33}
     profile = {

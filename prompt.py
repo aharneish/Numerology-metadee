@@ -5,15 +5,15 @@ def build_prompt(profile):
     deity_map={
         1:"Surya",
         2:"Chandra",
-        3:"Saraswati",
-        4:"Ganesha",
-        5:"Hanuman",
-        6:"Lakshmi",
+        3:"Guru",
+        4:"Rahu",
+        5:"Budha",
+        6:"Shukra",
         7:"Ketu",
         8:"Shani",
-        9:"Mars",
-        11:"Shiva",
-        22:"Vishnu",
+        9:"Mangal",
+        11:"Rudra",
+        22:"Ganesh",
         33:"Devi"
     }
     

@@ -5,7 +5,7 @@ This is a Streamlit web application that generates a personalized numerology rep
 
 **Numerology Calculations:**
 - **Life Path Number:** Calculated from your date of birth (DOB).
-- **Destiny Number:** (Custom for this app) Also calculated from your DOB.
+- **Destiny Number:** Also calculated from your DOB.
 - **Soul Urge Number:** Calculated from the vowels in your full name.
 
 All numbers are mapped to relevant Hindu deities for deeper spiritual context. Master numbers (11, 22, 33) are handled appropriately.
@@ -56,6 +56,3 @@ All numbers are mapped to relevant Hindu deities for deeper spiritual context. M
 - `test_numerology.py` — Automated tests
 - `samplereport.txt` — Sample evaluation profile and checklist
 - `docs/` — Folder for your knowledge base documents
-
-## License
-MIT

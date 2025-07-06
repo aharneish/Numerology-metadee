@@ -1,11 +1,18 @@
 # Devotional Numerology App
 
+
 This is a Streamlit web application that generates a personalized numerology report with spiritual insights. It uses RAG (Retrieval-Augmented Generation) with FAISS and Groq LLMs for enhanced, context-aware responses.
 
-It takes in the input of your Full Name (First Name + Last Name (Surname)) and your Date of Birth in the format YYYY-MM-DD using which it calculates Life Path Number, Destiny/Expression Number and Soul Urge Number. The Destiny/Expression number, Life Path Number, Soul Urge Numbers are mapped to Deities which provide more insights into the personality of the user.
+**Numerology Calculations:**
+- **Life Path Number:** Calculated from your date of birth (DOB).
+- **Destiny Number:** (Custom for this app) Also calculated from your DOB.
+- **Soul Urge Number:** Calculated from the vowels in your full name.
+
+All numbers are mapped to relevant Hindu deities for deeper spiritual context. Master numbers (11, 22, 33) are handled appropriately.
 
 ## Features
 - Enter your full name and date of birth to receive a numerology profile and a devotional report.
+- Destiny number is calculated from DOB (not name).
 - Supports both `.txt` and `.pdf` documents for RAG context.
 - Beautiful, chat-like UI inspired by ChatGPT.
 - Automated tests for numerology logic.
@@ -43,10 +50,11 @@ It takes in the input of your Full Name (First Name + Last Name (Surname)) and y
 
 ## File Structure
 - `app.py` — Streamlit web app
-- `numerology.py` — Numerology logic
+- `numerology.py` — Numerology logic (Life Path, Destiny, Soul Urge calculations; Destiny uses DOB)
 - `llm_inference.py` — LLM and RAG pipeline
 - `create index.py` — Helper to build the FAISS index
 - `test_numerology.py` — Automated tests
+- `samplereport.txt` — Sample evaluation profile and checklist
 - `docs/` — Folder for your knowledge base documents
 
 ## License
